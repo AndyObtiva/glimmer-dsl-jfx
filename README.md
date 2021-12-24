@@ -9,13 +9,13 @@
 
 Furthermore, the whole stage and scene production metaphor made everything more complicated to get into it for software engineers who encountered it for the first time. After all, desktop developers simply think of windows, not stages or scenes. The metaphor unfortunately pushes software engineers into thinking of low-level details (e.g. nodes) that are not important in developing business desktop applications.
 
-[FXML](https://openjfx.io/javadoc/17/javafx.fxml/javafx/fxml/doc-files/introduction_to_fxml.html) attempted to rectify the situation by making [JavaFX](https://openjfx.io/) more declarative than its [Swing-like Java syntax](https://docs.oracle.com/javase/tutorial/uiswing/). Unfortunately, XML, like its cousin HTML, brings all the same problems web developers face in day-to-day in suffering through multi-language dissonance to desktop software engineering. That defeats the whole point about desktop software engineering being a lot more productive than web development for simple local apps. [FXML](https://openjfx.io/javadoc/17/javafx.fxml/javafx/fxml/doc-files/introduction_to_fxml.html) was really just a step back into the wrong direction.
+[FXML](https://openjfx.io/javadoc/17/javafx.fxml/javafx/fxml/doc-files/introduction_to_fxml.html) attempted to rectify the situation by making [JavaFX](https://openjfx.io/) more declarative than its [Swing-like Java syntax](https://docs.oracle.com/javase/tutorial/uiswing/). Unfortunately, XML, like its cousin HTML, brings all the same problems web developers suffer from day-to-day to desktop development, especially multi-language dissonance. That defeated the whole point about desktop development being much simpler and more productive than web development for simple local apps. [FXML](https://openjfx.io/javadoc/17/javafx.fxml/javafx/fxml/doc-files/introduction_to_fxml.html) was really just a step back into the wrong direction.
 
-[Glimmer DSL for JFX](https://rubygems.org/gems/glimmer-dsl-jfx) aims to overcome the hurdles of [JavaFX](https://openjfx.io/) by providing a declarative hierarchical alternative to [FXML](https://openjfx.io/javadoc/17/javafx.fxml/javafx/fxml/doc-files/introduction_to_fxml.html) in pure Ruby as one language (not multi-language mixing dissonance), which supercharges productivity and maintainability in developing [JavaFX](https://openjfx.io/) applications similarly to [Glimmer DSL for SWT](https://github.com/AndyObtiva/glimmer-dsl-swt) through:
+[Glimmer DSL for JFX](https://rubygems.org/gems/glimmer-dsl-jfx) aims to overcome the hurdles of [JavaFX](https://openjfx.io/) by providing a declarative hierarchical alternative to [FXML](https://openjfx.io/javadoc/17/javafx.fxml/javafx/fxml/doc-files/introduction_to_fxml.html) in pure Ruby as one language (no multi-language mixing dissonance), thus supercharging productivity and maintainability in developing [JavaFX](https://openjfx.io/) applications similarly to [Glimmer DSL for SWT](https://github.com/AndyObtiva/glimmer-dsl-swt) via:
 - [Declarative DSL syntax](#glimmer-gui-dsl) that visually maps to the GUI control hierarchy while still allowing View logic in the same language
 - Convention over configuration via [smart defaults and automation of low-level details](#smart-defaults-and-conventions)
 - Requiring the least amount of syntax possible to build GUI
-- Custom Keyword support
+- Custom control support
 - Bidirectional Data-Binding without the complexity of static typing to declaratively wire and automatically synchronize GUI with Business Models
 - Scaffolding for new custom components, apps, and gems
 - Native-Executable packaging on Mac, Windows, and Linux.
@@ -32,14 +32,13 @@ window {
 }
 ```
 
-NOTE: Glimmer DSL for JFX is currently in early alpha mode (incomplete proof-of-concept). Please help make better by contributing, adopting for small or low risk projects, and providing feedback. It is still an early alpha, so the more feedback and issues you report the better.
+NOTE: Glimmer DSL for JFX is currently in early alpha mode (incomplete proof-of-concept). If you want it developed faster, then [open an issue report](https://github.com/AndyObtiva/glimmer-dsl-jfx/issues/new). I have completed some GitHub project features much faster before due to [issue reports](https://github.com/AndyObtiva/glimmer-dsl-jfx/issues) and [pull requests](https://github.com/AndyObtiva/glimmer-dsl-jfx/pulls). Please help make better by contributing, adopting for small or low risk projects, and providing feedback. It is still an early alpha, so the more feedback and issues you report the better.Please help make better by contributing, adopting for small or low risk projects, and providing feedback. It is still an early alpha, so the more feedback and issues you report the better.
 
 Other [Glimmer](https://rubygems.org/gems/glimmer) DSL gems you might be interested in:
 - [glimmer-dsl-swt](https://github.com/AndyObtiva/glimmer-dsl-swt): Glimmer DSL for SWT (JRuby Desktop Development GUI Framework)
 - [glimmer-dsl-opal](https://github.com/AndyObtiva/glimmer-dsl-opal): Glimmer DSL for Opal (Pure Ruby Web GUI and Auto-Webifier of Desktop Apps)
 - [glimmer-dsl-tk](https://github.com/AndyObtiva/glimmer-dsl-tk): Glimmer DSL for Tk (MRI Ruby Desktop Development GUI Library)
-- [glimmer-dsl-gtk](https://github.com/AndyObtiva/glimmer-dsl-gtk): Glimmer DSL for GTK (Ruby-GNOME Desktop Development GUI Library)
-- [glimmer-dsl-libui](https://github.com/AndyObtiva/glimmer-dsl-libui): Glimmer DSL for Tk (Prerequisite-Free Ruby Desktop Development GUI Library)
+- [glimmer-dsl-libui](https://github.com/AndyObtiva/glimmer-dsl-libui): Glimmer DSL for LibUI (Prerequisite-Free Ruby Desktop Development GUI Library)
 - [glimmer-dsl-xml](https://github.com/AndyObtiva/glimmer-dsl-xml): Glimmer DSL for XML (& HTML)
 - [glimmer-dsl-css](https://github.com/AndyObtiva/glimmer-dsl-css): Glimmer DSL for CSS
 
@@ -48,9 +47,7 @@ Other [Glimmer](https://rubygems.org/gems/glimmer) DSL gems you might be interes
 - JDK 17 (find at https://www.oracle.com/java/technologies/downloads/#java17)
 - [RVM](http://rvm.io) on Mac & Linux (not available on Windows)
 - JRuby 9.3.1.0 (supporting Ruby 2.6.x syntax) (get via [RVM](http://rvm.io) on Mac and Linux by running `rvm install jruby-9.2.19.0`; On Windows, find at [https://www.jruby.org/download](https://www.jruby.org/download))
-- JavaFX 17 SDK (find at https://gluonhq.com/products/javafx/ choosing the right "SDK" for your platform. Follow environment variable instructions at https://openjfx.io/openjfx-docs/#install-javafx . Specifically, after download, export/set `PATH_TO_FX` environment variable to path of `lib` directory in extracted "SDK" directory)
-
-Note: On the Mac, if you have [Glimmer DSL for SWT](https://github.com/AndyObtiva/glimmer-dsl-swt) installed, and it added `export JRUBY_OPTS="$JRUBY_OPTS -J-XstartOnFirstThread"` to your `.zprofile`, `.zshrc`, `.bash_profile`, or `.bashrc`, make sure to disable it before using Glimmer DSL for JFX. Unfortunately, it is not compatible with it and will hang its apps until disabled.
+- JavaFX 17 Runtime SDK (find at https://gluonhq.com/products/javafx/ choosing the right "SDK" for your platform and CPU architecture. Follow environment variable instructions at https://openjfx.io/openjfx-docs/#install-javafx . Specifically, after download, export/set `PATH_TO_FX` environment variable to path of `lib` directory in extracted "SDK" directory)
 
 ## Setup
 
@@ -77,7 +74,7 @@ bundle
 
 ## Usage
 
-Require the library and mixin the `Glimmer` module to utilize the [Glimmer GUI DSL](#glimmer-gui-dsl) for JFX:
+Simply require the library and mixin the `Glimmer` module to utilize the [Glimmer GUI DSL](#glimmer-gui-dsl) for JFX:
 
 ```ruby
 require 'glimmer-dsl-jfx'
@@ -91,7 +88,7 @@ window {
 }
 ```
 
-For actual application development outside of simple demos, mixin the `Glimmer` module into a custom application class instead:
+For actual application development outside of simple demos, mixin the `Glimmer` module into a custom Ruby application class instead:
 
 ```ruby
 require 'glimmer-dsl-jfx'
@@ -117,7 +114,7 @@ The Glimmer GUI DSL enables development of desktop graphical user interfaces in 
 
 1 - Keywords
 
-Always start with `window`, which simplifies/replaces both the `Stage` and `Scene` concepts, having both their properties. Additionally, `window` removes the need to extend `Application` as it does so automatically internally.
+Always start with `window`, which simplifies/replaces both the `Stage` and `Scene` concepts, having both their properties. Additionally, `window` removes the need to extend `Application` and worry about receiving the primary `Stage` before being able to set the `Scene` and add controls.
 
 Inside `window`, you may declare any [JavaFX](https://openjfx.io/) control with its keyword, which is the underscored version of the class name. For example, `label` is the keyword for `javafx.scene.control.Label`
 
@@ -252,7 +249,7 @@ HelloButton.new.launch
 
 ## Smart Defaults and Conventions
 
-- `window` automatically builds an `Application` object, sets `Stage` properties and sets a `Scene` in primary stage.
+- `window` automatically builds a primary `Stage` object, sets `Stage` properties and sets a `Scene` in primary stage.
 
 ## Girb (Glimmer IRB)
 
@@ -374,6 +371,7 @@ HelloButton.new.launch
 ## Resources
 
 - OpenJFX Website: https://openjfx.io/
+- OpenJFX Install Instructions: https://openjfx.io/openjfx-docs/#install-javafx
 - Oracle JavaFX Javadoc: https://www.javadoc.io/doc/org.openjfx/javafx-base/17.0.1/index.html
 
 ## Process
