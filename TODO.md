@@ -1,5 +1,8 @@
 # TODO
 
+- upgrade to glimmer 2.6.0
+- support path shapes
+
 ## Maybe
 
 - Consider always setting a VBOX as the default child of `window` if no `Region` child is specified
